@@ -1,1 +1,1 @@
-# sololearn_code_practice
+# sololearn code
