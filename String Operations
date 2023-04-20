@@ -1,0 +1,20 @@
+Let's test your coding skills!
+Take a string as input and output 
+each letter of the string on a new 
+line, repeated N times, where N is 
+the position of the letter in the string.
+
+Sample Input:
+data
+
+Sample Output: 
+d
+aa
+ttt
+aaaa
+
+x = input()
+counter = 0
+for i in x:
+    counter = counter+1
+    print(i *counter)
