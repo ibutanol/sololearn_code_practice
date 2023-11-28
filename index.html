@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<style>
+  table, th, td {
+    border: 1px solid rgb(0, 0, 0);
+    border-collapse: collapse;
+  }
+  th, td {
+    background-color: #fdfdfd;
+  }
+  /* Add the following CSS for alternating colors */
+  tr:nth-child(even) td:nth-child(even) {
+    background-color: #85d185; /* Green background color for even columns in even rows */
+  }
+  tr:nth-child(odd) td:nth-child(odd) {
+    background-color: #85d185; /* Green background color for odd columns in odd rows */
+  }
+</style>
+<body>
+
+<table style="width:100%" id="myTable"></table>
+
+<script>
+  // Data for the table
+  var tableData = [
+    ["Spalte1", "Spalte2", "Spalte3", "Spalte4", "Spalte5", "Spalte6", "Spalte7", "Spalte8", "Spalte9"],
+    ["", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", "", ""]
+  ];
+
+  // Function to generate the table
+  function generateTable(data) {
+    var table = document.getElementById("myTable");
+
+    for (var i = 0; i < data.length; i++) {
+      var row = table.insertRow(i);
+      for (var j = 0; j < data[i].length; j++) {
+        var cell = row.insertCell(j);
+        // Add <strong> tag to the cells in the first row
+        cell.innerHTML = i === 0 ? "<strong>" + data[i][j] + "</strong>" : data[i][j] === "" ? "&nbsp;" : data[i][j];
+      }
+    }
+  }
+
+  // Call the function with your data
+  generateTable(tableData);
+</script>
+
+</body>
+</html>
